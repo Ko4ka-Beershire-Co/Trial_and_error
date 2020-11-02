@@ -36,4 +36,23 @@ print(sorted(Array_indices))
 X_indices = (-X).argsort()[:top]
 print(sorted(X_indices))
 
-# Hashmap or turtle
+
+# Hashmap or !turtle!
+
+def turtle(range1, range2):
+    i = 0
+    j = 0
+    found = 0
+    while i < len(range1) and j < len(range2):
+        if range1[i] == range2[j]:
+            found = found + 1
+            i = i + 1
+            j = j + 1
+        elif range1[i] < range2[j]:
+            i = i + 1
+        else:
+            j = j + 1
+    return found
+
+
+print(turtle(sorted(Array_indices), sorted(X_indices)))
