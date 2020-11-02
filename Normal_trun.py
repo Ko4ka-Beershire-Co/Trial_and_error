@@ -15,12 +15,8 @@ def normal(x, mu, sigma):
 X = stats.truncnorm.rvs(
     (lower - mu) / sigma, (upper - mu) / sigma, loc=mu, scale=sigma, size=n)
 
-x = np.random.normal(mu, sigma, n)
-y = normal(X, mu, sigma)
+# x = np.random.normal(mu, sigma, n)
+Y = normal(X, mu, sigma)
 
-print(X)
-print(x)
-print(y)
-
-fig = plt.scatter(x=X, y=y)
+fig = plt.scatter(x=X, y=Y)
 fig.show()
