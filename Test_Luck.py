@@ -5,7 +5,7 @@ import numpy as np
 import plotly.express as plt
 import scipy.stats as stats
 
-mu, sigma, n = 50, 20, 1000
+mu, sigma, n = 50, 25, 1000
 lower, upper = 0, 100
 
 
@@ -15,13 +15,18 @@ def normal(x, mu, sigma):
 
 X = stats.truncnorm.rvs(
     (lower - mu) / sigma, (upper - mu) / sigma, loc=mu, scale=sigma, size=n)
-# X = X - 10
-X = X * 0.9
 
+# Visual
 # x = np.random.normal(mu, sigma, n)
 Y = normal(X, mu, sigma)
 
+fig = plt.scatter(x=X, y=Y)
+fig.show()
+
 # Part 2: Luck
+
+# X = X - 10
+X = X * 0.9
 
 Z = np.random.random_integers(1, 10, n)
 
