@@ -15,6 +15,8 @@ def normal(x, mu, sigma):
 
 X = stats.truncnorm.rvs(
     (lower - mu) / sigma, (upper - mu) / sigma, loc=mu, scale=sigma, size=n)
+# X = X - 10
+X = X * 0.9
 
 # x = np.random.normal(mu, sigma, n)
 Y = normal(X, mu, sigma)
