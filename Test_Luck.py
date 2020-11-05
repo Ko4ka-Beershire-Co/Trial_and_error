@@ -5,8 +5,9 @@ import numpy as np
 import plotly.express as plt
 import scipy.stats as stats
 
-mu, sigma, n = 50, 25, 1000
+mu, sigma, n = 50, 35, 1000
 lower, upper = 0, 100
+top = 50
 
 
 def normal(x, mu, sigma):
@@ -36,8 +37,7 @@ Array = X + Z
 # T = np. count_nonzero(Array)
 # print(T)
 
-top = 10
-Array_indices = (-Array).argsort()[:top]
+Array_indices = (-Array).argsort()[:top]  # Берем аррей, сортируем обратно, возвращаем первые n элементов
 print(sorted(Array_indices))
 
 X_indices = (-X).argsort()[:top]
@@ -46,7 +46,7 @@ print(sorted(X_indices))
 
 # Hashmap or !turtle!
 
-def turtle(range1, range2):
+def turtle(range1, range2):  # или еще проще
     i = 0
     j = 0
     found = 0
@@ -62,4 +62,7 @@ def turtle(range1, range2):
     return found
 
 
-print(turtle(sorted(Array_indices), sorted(X_indices)))
+print(' ')
+# (turtle(sorted(Array_indices), sorted(X_indices)))
+print(str(turtle(sorted(Array_indices), sorted(X_indices))) + ' from ' + str(top))  # не забывай сортед. Вась)))
+print("Will have passed fairly")
